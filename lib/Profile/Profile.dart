@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_pro_max/Profile/EditProfile/EditProfileScreen.dart';
+
+import '../commonUtils/commonUtils.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -11,6 +14,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   List<Status> list = [];
   List<Post> postList = [];
   late TabController _tabController;
+  String profileImage =
+      'https://c.ndtvimg.com/2021-02/s10oapdo_budget-2021-memes-budget-jokes_625x300_01_February_21.jpg';
 
   @override
   void initState() {
@@ -54,22 +59,28 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
 
       list.add(Status(
           image:
-              "https://images.unsplash.com/photo-1538991383142-36c4edeaffde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80", storyTitle: 'MyStory1'));
+              "https://images.unsplash.com/photo-1538991383142-36c4edeaffde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+          storyTitle: 'MyStory1'));
       list.add(Status(
           image:
-              "https://images.unsplash.com/photo-1536782376847-5c9d14d97cc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", storyTitle: 'Monday Oi'));
+              "https://images.unsplash.com/photo-1536782376847-5c9d14d97cc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+          storyTitle: 'Monday Oi'));
       list.add(Status(
           image:
-              "https://images.unsplash.com/photo-1509514026798-53d40bf1aa09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZnJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", storyTitle: 'Ok sun'));
+              "https://images.unsplash.com/photo-1509514026798-53d40bf1aa09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZnJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+          storyTitle: 'Ok sun'));
       list.add(Status(
           image:
-              "https://images.unsplash.com/photo-1453060590797-2d5f419b54cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZnJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", storyTitle: 'USe'));
+              "https://images.unsplash.com/photo-1453060590797-2d5f419b54cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZnJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+          storyTitle: 'USe'));
       list.add(Status(
           image:
-              "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZyZWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", storyTitle: 'usa'));
+              "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZyZWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+          storyTitle: 'usa'));
       list.add(Status(
           image:
-              "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZyZWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", storyTitle: '2022'));
+              "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZyZWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+          storyTitle: '2022'));
     });
   }
 
@@ -106,7 +117,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Icon(Icons.keyboard_arrow_down_outlined),
+                      const Icon(Icons.keyboard_arrow_down_outlined),
                     ],
                   )),
                 ),
@@ -115,11 +126,11 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(Icons.add),
+                      const Icon(Icons.add),
                       SizedBox(
                         width: size * 0.05,
                       ),
-                      Icon(Icons.menu)
+                      const Icon(Icons.menu)
                     ],
                   ),
                 )
@@ -139,7 +150,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                           radius: size * 0.15,
                           child: CircleAvatar(
                             radius: size * 0.14,
-                            backgroundImage: NetworkImage('https://c.ndtvimg.com/2021-02/s10oapdo_budget-2021-memes-budget-jokes_625x300_01_February_21.jpg'),
+                            backgroundImage: NetworkImage(profileImage),
                             backgroundColor: Colors.black,
                           ),
                         ),
@@ -148,7 +159,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                         height: size * 0.02,
                       ),
                       Text(
-                        "username",
+                        userName,
                         style: TextStyle(
                             fontSize: size * 0.04, fontWeight: FontWeight.bold),
                       ),
@@ -157,48 +168,74 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                   Padding(
                     padding:
                         EdgeInsets.only(right: size * 0.1, bottom: size * 0.08),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    child: Column(
                       children: [
-                        Column(
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(
-                              postList.length.toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: size * 0.05),
+                            Column(
+                              children: [
+                                Text(
+                                  postList.length.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: size * 0.05),
+                                ),
+                                const Text("Posts"),
+                              ],
                             ),
-                            Text("Posts"),
+                            SizedBox(
+                              width: size * 0.03,
+                            ),
+                            Column(
+                              children: [
+                                Text(
+                                  "1K",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: size * 0.05),
+                                ),
+                                const Text("Followers"),
+                              ],
+                            ),
+                            SizedBox(
+                              width: size * 0.03,
+                            ),
+                            Column(
+                              children: [
+                                Text(
+                                  "56",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: size * 0.05),
+                                ),
+                                const Text("Following"),
+                              ],
+                            )
                           ],
                         ),
-                        SizedBox(
-                          width: size * 0.03,
+                        Container(
+                          padding: EdgeInsets.all(size * 0.01),
+                          /* decoration:
+                      BoxDecoration(border: Border.all(color: Colors.grey)),*/
+                          child: ElevatedButton(
+                              style: const ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll(Colors.grey)),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => EditProfileScreen(
+                                              name: userName,
+                                              image: profileImage,
+                                            )));
+                              },
+                              child: const Text(
+                                editProfile,
+                                style: TextStyle(color: Colors.black),
+                              )),
                         ),
-                        Column(
-                          children: [
-                            Text(
-                              "1K",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: size * 0.05),
-                            ),
-                            Text("Followers"),
-                          ],
-                        ),
-                        SizedBox(
-                          width: size * 0.03,
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "56",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: size * 0.05),
-                            ),
-                            Text("Following"),
-                          ],
-                        )
                       ],
                     ),
                   ),
@@ -210,18 +247,13 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                 Padding(
                   padding:
                       EdgeInsets.only(left: size * 0.05, right: size * 0.02),
-                  child: Text(
+                  child: const Text(
                       "Qui quasi necessitatibus id pariatur libero non iusto consequatur ea corporis sint. Ex iste accusamus ea totam harum eum internos autem est error! Et incidunt fugit ad"),
                 ),
                 SizedBox(
                   height: size * 0.02,
                 ),
-                Container(
-                  padding: EdgeInsets.all(size * 0.02),
-                  decoration:
-                      BoxDecoration(border: Border.all(color: Colors.grey)),
-                  child: Text("Edit Profile"),
-                ),
+
                 /* ElevatedButton(
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all(
@@ -261,7 +293,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               ),
                             ),
                             Padding(
-                              padding:  EdgeInsets.only(left:size*0.05 ),
+                              padding: EdgeInsets.only(left: size * 0.05),
                               child: Text(list[index].storyTitle),
                             )
                           ],
@@ -281,12 +313,12 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                       controller: _tabController,
                       indicatorColor: Colors.black,
                       tabs: [
-                        Tab(
+                        const Tab(
                           icon: Icon(
                             Icons.menu_book_rounded,
                           ),
                         ),
-                        Tab(
+                        const Tab(
                           icon: Icon(
                             Icons.perm_contact_cal_sharp,
                           ),
@@ -312,7 +344,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                   image: DecorationImage(
                                       image: NetworkImage(postList[index].post),
                                       fit: BoxFit.cover),
-                                  color: Colors.red,
+                                  color: Colors.transparent,
                                   borderRadius: BorderRadius.circular(2)),
                             );
                           }),
@@ -332,7 +364,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                   image: DecorationImage(
                                       image: NetworkImage(postList[index].post),
                                       fit: BoxFit.cover),
-                                  color: Colors.red,
+                                  color: Colors.transparent,
                                   borderRadius: BorderRadius.circular(2)),
                             );
                           }),
@@ -360,7 +392,9 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                   CircleAvatar(
                     backgroundColor: Colors.red.shade200,
                     radius: size * 0.05,
-                    child: CircleAvatar(backgroundImage: NetworkImage('https://c.ndtvimg.com/2021-02/s10oapdo_budget-2021-memes-budget-jokes_625x300_01_February_21.jpg'),
+                    child: CircleAvatar(
+                      backgroundImage: const NetworkImage(
+                          'https://c.ndtvimg.com/2021-02/s10oapdo_budget-2021-memes-budget-jokes_625x300_01_February_21.jpg'),
                       radius: size * 0.04,
                       backgroundColor: Colors.black,
                     ),
@@ -379,12 +413,14 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
 
 class Status {
   String image = "";
-  String storyTitle="";
+  String storyTitle = "";
 
   Status({required this.image, required this.storyTitle});
 }
 
+//this is post modal
 class Post {
   String post = "";
+
   Post({required this.post});
 }
