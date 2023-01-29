@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_pro_max/ImageView/ImageView.dart';
 import 'package:instagram_pro_max/Profile/EditProfile/EditProfileScreen.dart';
 
 import '../commonUtils/commonUtils.dart';
@@ -111,9 +112,9 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                       Padding(
                         padding: EdgeInsets.only(left: size * 0.02),
                         child: Text(
-                          "username",
+                          userProfileName,
                           style: TextStyle(
-                              fontSize: size * 0.07,
+                              fontSize: size * 0.05,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -159,7 +160,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                         height: size * 0.02,
                       ),
                       Text(
-                        userName,
+                        nameProfile,
                         style: TextStyle(
                             fontSize: size * 0.04, fontWeight: FontWeight.bold),
                       ),
@@ -227,8 +228,9 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => EditProfileScreen(
-                                              name: userName,
+                                              name: nameProfile,
                                               image: profileImage,
+                                              userName: userProfileName,
                                             )));
                               },
                               child: const Text(
@@ -312,13 +314,13 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                       unselectedLabelColor: Colors.grey,
                       controller: _tabController,
                       indicatorColor: Colors.black,
-                      tabs: [
-                        const Tab(
+                      tabs: const [
+                        Tab(
                           icon: Icon(
                             Icons.menu_book_rounded,
                           ),
                         ),
-                        const Tab(
+                        Tab(
                           icon: Icon(
                             Icons.perm_contact_cal_sharp,
                           ),
@@ -339,13 +341,24 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                   crossAxisSpacing: size * 0.01,
                                   mainAxisSpacing: size * 0.01),
                           itemBuilder: (context, index) {
-                            return Container(
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(postList[index].post),
-                                      fit: BoxFit.cover),
-                                  color: Colors.transparent,
-                                  borderRadius: BorderRadius.circular(2)),
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ImageView(
+                                            imageViewPhoto:
+                                                postList[index].post)));
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image:
+                                            NetworkImage(postList[index].post),
+                                        fit: BoxFit.cover),
+                                    color: Colors.transparent,
+                                    borderRadius: BorderRadius.circular(2)),
+                              ),
                             );
                           }),
                       GridView.builder(

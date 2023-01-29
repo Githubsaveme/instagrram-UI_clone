@@ -1,3 +1,4 @@
 
 const editProfile ="Edit Profile";
-const userName="UserName";
+const nameProfile="UserName";
+const userProfileName="Dummy_singh000";

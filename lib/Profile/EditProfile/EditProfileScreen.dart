@@ -7,8 +7,13 @@ import '../../commonUtils/commonUtils.dart';
 class EditProfileScreen extends StatefulWidget {
   final String name;
   final String image;
+  final String userName;
 
-  const EditProfileScreen({Key? key, required this.name, required this.image})
+  const EditProfileScreen(
+      {Key? key,
+      required this.name,
+      required this.image,
+      required this.userName})
       : super(key: key);
 
   @override
@@ -28,6 +33,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     nameWidget = widget.name;
     imageWidget = widget.image;
     nameController.text = widget.name;
+    userNameController.text = widget.userName;
     debugPrint(widget.name);
     debugPrint(widget.image);
     super.initState();
@@ -126,7 +132,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               width: size.width * 0.7,
               padding: EdgeInsets.only(left: size.width * 0.01),
               child: TextFormField(
-                controller: nameController,
+                controller: userNameController,
                 style: TextStyle(),
               ),
             )
@@ -140,7 +146,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               width: size.width * 0.7,
               padding: EdgeInsets.only(left: size.width * 0.01),
               child: TextFormField(
-                controller: nameController,
+                controller: bioController,
                 style: TextStyle(),
               ),
             )
@@ -154,7 +160,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               width: size.width * 0.7,
               padding: EdgeInsets.only(left: size.width * 0.01),
               child: TextFormField(
-                controller: nameController,
+                controller: linkController,
                 style: TextStyle(),
               ),
             )
