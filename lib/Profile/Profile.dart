@@ -149,10 +149,19 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                         child: CircleAvatar(
                           backgroundColor: Colors.red.shade200,
                           radius: size * 0.15,
-                          child: CircleAvatar(
-                            radius: size * 0.14,
-                            backgroundImage: NetworkImage(profileImage),
-                            backgroundColor: Colors.black,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ImageView(
+                                          imageViewPhoto: profileImage)));
+                            },
+                            child: CircleAvatar(
+                              radius: size * 0.14,
+                              backgroundImage: NetworkImage(profileImage),
+                              backgroundColor: Colors.black,
+                            ),
                           ),
                         ),
                       ),
@@ -284,13 +293,23 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                             Padding(
                               padding: EdgeInsets.only(
                                   top: size * 0.04, left: size * 0.04),
-                              child: CircleAvatar(
-                                backgroundColor: Colors.grey.shade300,
-                                radius: size * 0.1,
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ImageView(
+                                              imageViewPhoto:
+                                                  list[index].image)));
+                                },
                                 child: CircleAvatar(
-                                  radius: size * 0.089,
-                                  backgroundImage:
-                                      NetworkImage(list[index].image),
+                                  backgroundColor: Colors.grey.shade300,
+                                  radius: size * 0.1,
+                                  child: CircleAvatar(
+                                    radius: size * 0.089,
+                                    backgroundImage:
+                                        NetworkImage(list[index].image),
+                                  ),
                                 ),
                               ),
                             ),
@@ -422,8 +441,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   }
 }
 
-///class modal
-
+///status
 class Status {
   String image = "";
   String storyTitle = "";

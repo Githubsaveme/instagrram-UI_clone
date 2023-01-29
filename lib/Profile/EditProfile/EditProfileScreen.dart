@@ -86,9 +86,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(size.width * 0.02),
-        child: editWidget(size),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(size.width * 0.02),
+          child: editWidget(size),
+        ),
       ),
     );
   }
