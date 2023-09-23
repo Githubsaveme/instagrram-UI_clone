@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_pro_max/ImageView/ImageView.dart';
-import 'package:instagram_pro_max/Profile/EditProfile/EditProfileScreen.dart';
-
-import '../commonUtils/commonUtils.dart';
+import 'package:instagram_pro_max/commonUtils/commonUtils.dart';
+import 'package:instagram_pro_max/viewUi/ImageView/ImageView.dart';
+import 'package:instagram_pro_max/viewUi/Profile/EditProfile/EditProfileScreen.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -89,14 +88,6 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size.width;
     return Scaffold(
-      /*appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Title(
-            color: Colors.white,
-            child: Row(
-              children: [],
-            )),
-      ),*/
       body: Padding(
         padding: EdgeInsets.only(top: size * 0.07),
         child: Column(
@@ -405,35 +396,6 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
-            Container(
-              color: Colors.white,
-              height: size * 0.18,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.home, size: size * 0.09),
-                  Icon(Icons.search_outlined, size: size * 0.09),
-                  Icon(
-                    Icons.settings,
-                    size: size * 0.09,
-                  ),
-                  Icon(
-                    Icons.shopping_bag_outlined,
-                    size: size * 0.09,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.red.shade200,
-                    radius: size * 0.05,
-                    child: CircleAvatar(
-                      backgroundImage: const NetworkImage(
-                          'https://c.ndtvimg.com/2021-02/s10oapdo_budget-2021-memes-budget-jokes_625x300_01_February_21.jpg'),
-                      radius: size * 0.04,
-                      backgroundColor: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-            )
           ],
         ),
       ),

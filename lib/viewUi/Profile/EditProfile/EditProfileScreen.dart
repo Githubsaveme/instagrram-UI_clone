@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_pro_max/commonUtils/commonUtils.dart';
 
-import '../../commonUtils/commonUtils.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final String name;
